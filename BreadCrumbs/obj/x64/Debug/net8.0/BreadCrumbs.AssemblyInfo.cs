@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BreadCrumbs")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4b61b6896ecad90993da29f7be10bd17f50708cb")]
 [assembly: System.Reflection.AssemblyProductAttribute("BreadCrumbs")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BreadCrumbs")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -7,7 +7,6 @@ namespace BreadCrumbs {
     public partial class BreadCrumbsConfig : OnixModuleSettingRedirector {
         void BeginTrail() {
             BreadCrumbs.Instance.NumberOfTrails += 1;
-            Console.WriteLine("HI");
             BreadCrumbs.Instance.Trails.Add(new Trail($"New trail {BreadCrumbs.Instance.NumberOfTrails}"));
             
 
