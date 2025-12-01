@@ -1,0 +1,15 @@
+C:\Users\ms\AppData\Local\Packages\Microsoft.MinecraftUWP_8wekyb3d8bbwe\RoamingState\OnixClient\Plugins\makingPlugins\BreadCrumbs\BreadCrumbs\bin\x64\Debug\net8.0\BreadCrumbs.deps.json
+C:\Users\ms\AppData\Local\Packages\Microsoft.MinecraftUWP_8wekyb3d8bbwe\RoamingState\OnixClient\Plugins\makingPlugins\BreadCrumbs\BreadCrumbs\bin\x64\Debug\net8.0\BreadCrumbs.dll
+C:\Users\ms\AppData\Local\Packages\Microsoft.MinecraftUWP_8wekyb3d8bbwe\RoamingState\OnixClient\Plugins\makingPlugins\BreadCrumbs\BreadCrumbs\bin\x64\Debug\net8.0\BreadCrumbs.pdb
+C:\Users\ms\AppData\Local\Packages\Microsoft.MinecraftUWP_8wekyb3d8bbwe\RoamingState\OnixClient\Plugins\makingPlugins\BreadCrumbs\BreadCrumbs\bin\x64\Debug\net8.0\OnixRuntime.dll
+C:\Users\ms\AppData\Local\Packages\Microsoft.MinecraftUWP_8wekyb3d8bbwe\RoamingState\OnixClient\Plugins\makingPlugins\BreadCrumbs\BreadCrumbs\bin\x64\Debug\net8.0\OnixRuntime.xml
+C:\Users\ms\AppData\Local\Packages\Microsoft.MinecraftUWP_8wekyb3d8bbwe\RoamingState\OnixClient\Plugins\makingPlugins\BreadCrumbs\BreadCrumbs\obj\x64\Debug\net8.0\BreadCrumbs.csproj.AssemblyReference.cache
+C:\Users\ms\AppData\Local\Packages\Microsoft.MinecraftUWP_8wekyb3d8bbwe\RoamingState\OnixClient\Plugins\makingPlugins\BreadCrumbs\BreadCrumbs\obj\x64\Debug\net8.0\BreadCrumbs.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ms\AppData\Local\Packages\Microsoft.MinecraftUWP_8wekyb3d8bbwe\RoamingState\OnixClient\Plugins\makingPlugins\BreadCrumbs\BreadCrumbs\obj\x64\Debug\net8.0\BreadCrumbs.AssemblyInfoInputs.cache
+C:\Users\ms\AppData\Local\Packages\Microsoft.MinecraftUWP_8wekyb3d8bbwe\RoamingState\OnixClient\Plugins\makingPlugins\BreadCrumbs\BreadCrumbs\obj\x64\Debug\net8.0\BreadCrumbs.AssemblyInfo.cs
+C:\Users\ms\AppData\Local\Packages\Microsoft.MinecraftUWP_8wekyb3d8bbwe\RoamingState\OnixClient\Plugins\makingPlugins\BreadCrumbs\BreadCrumbs\obj\x64\Debug\net8.0\BreadCrumbs.csproj.CoreCompileInputs.cache
+C:\Users\ms\AppData\Local\Packages\Microsoft.MinecraftUWP_8wekyb3d8bbwe\RoamingState\OnixClient\Plugins\makingPlugins\BreadCrumbs\BreadCrumbs\obj\x64\Debug\net8.0\BreadCru.D4684AB2.Up2Date
+C:\Users\ms\AppData\Local\Packages\Microsoft.MinecraftUWP_8wekyb3d8bbwe\RoamingState\OnixClient\Plugins\makingPlugins\BreadCrumbs\BreadCrumbs\obj\x64\Debug\net8.0\BreadCrumbs.dll
+C:\Users\ms\AppData\Local\Packages\Microsoft.MinecraftUWP_8wekyb3d8bbwe\RoamingState\OnixClient\Plugins\makingPlugins\BreadCrumbs\BreadCrumbs\obj\x64\Debug\net8.0\refint\BreadCrumbs.dll
+C:\Users\ms\AppData\Local\Packages\Microsoft.MinecraftUWP_8wekyb3d8bbwe\RoamingState\OnixClient\Plugins\makingPlugins\BreadCrumbs\BreadCrumbs\obj\x64\Debug\net8.0\BreadCrumbs.pdb
+C:\Users\ms\AppData\Local\Packages\Microsoft.MinecraftUWP_8wekyb3d8bbwe\RoamingState\OnixClient\Plugins\makingPlugins\BreadCrumbs\BreadCrumbs\obj\x64\Debug\net8.0\ref\BreadCrumbs.dll

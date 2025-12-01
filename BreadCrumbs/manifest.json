@@ -1,0 +1,13 @@
+{
+  "uuid": "a138ff4a-606f-4bf7-b44b-794156e4e0b1",
+  "plugin_name": "Bread Crumbs",
+  "plugin_author": "Janjre",
+  "plugin_description": "Leaves a trail behind you. You can save trails and replay them",
+  "plugin_version": "1.0.0",
+  "game_version": "1.21.124",
+  "supported_game_version_ranges": [
+    "0.0.0-9.99.9"
+  ],
+  "runtime_version": 7,
+  "target_assembly": "BreadCrumbs.dll"
+}
