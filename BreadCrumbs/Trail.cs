@@ -1,5 +1,4 @@
 ﻿using OnixRuntime.Api;
-using OnixRuntime.Api.Errors;
 using OnixRuntime.Api.Maths;
 using OnixRuntime.Api.OnixClient;
 using OnixRuntime.Api.OnixClient.Settings;
@@ -8,43 +7,43 @@ using OnixRuntime.Api.Rendering;
 namespace BreadCrumbs {
     public class Trail {
         public List<Vec3> Points;
-        public bool Render;
         public bool Live;
         public bool Paused;
         public string Name;
+        public float runningTime;
         public OnixSetting.SettingChangedDelegate PausedTrailDelegate { get; set; }
         public OnixSetting.SettingChangedDelegate StopTrailDelegate { get; set; }
-        public OnixSetting.SettingChangedDelegate DoLineDelegate { get; set; }
         public OnixSetting.SettingChangedDelegate RemoveTrailDelegate { get; set; }
 
         public OnixSetting CategorySetting;
         public OnixSetting PauseSetting;
         public OnixSetting StopSetting;
-        public OnixSetting DoLine;
+        public OnixSettingBool DoLine;
         public OnixSetting RemoveTrailSetting;
         
 
         public Trail(string name) {
             Points = new List<Vec3>();
-            Render = false;
             Live = true;
             Paused = false;
             Name = name;
             
             PausedTrailDelegate = Pause;
             StopTrailDelegate = Stop;
-            DoLineDelegate = DoRenderUpdate;
             RemoveTrailDelegate = Remove;
 
 
             CategorySetting = new OnixSettingCategory(BreadCrumbs.Config.CurrentModule,
                 name, "A trail", 4);
             BreadCrumbs.Config.CurrentModule.Settings.Append(CategorySetting);
+
+
+
+            DoLine = new OnixSettingBool(BreadCrumbs.Config.CurrentModule, $"Draw line ({Name})", true,
+                "Should render line");
+            DoLine.Value = true;
             
             
-            
-            DoLine = new OnixSettingBool(BreadCrumbs.Config.CurrentModule, "Draw line", false, "Should render line",
-                DoLineDelegate);
             
             BreadCrumbs.Config.CurrentModule.Settings.Append(DoLine);
 
@@ -63,13 +62,24 @@ namespace BreadCrumbs {
 
         }
 
-        public void DoRenderUpdate(OnixModule mod, OnixSetting setting, bool value) {
-            Console.WriteLine("INVOKED");
-            Render = !Render;
+        
+
+        public (ColorF, string) GetDisplayInfo(int index) {
+            TimeSpan t = TimeSpan.FromSeconds(runningTime);
+                    
+            string formatted = t.ToString(@"hh\:mm\:ss\:ff");
+
+            string pauseBit = !Paused ? $"[P{index} to pause]" : $"[F{index} to Finish]";
+                    
+            return (Paused ? ColorF.Red :  ColorF.White,  $"{Name}: {formatted} {pauseBit}");
         }
         
-        public void RenderLine(RendererWorld gfx) {
-            if (!Render) {
+        public void RenderLine(RendererWorld gfx,float delta) {
+            if (!Paused) {
+                runningTime += delta;
+            }
+            
+            if (DoLine.Value) {
                 for (int n = 0; n < Points.Count - 1; n++)
                 {
                     Vec3 p1 = Points[n];
@@ -108,7 +118,7 @@ namespace BreadCrumbs {
             }
         }
 
-        public void Pause(OnixModule mod, OnixSetting setting, bool value) {
+        public void RealPause(OnixSetting setting) {
             Paused = !Paused;
             if (Paused) {
                 setting.Name = "Play";
@@ -117,24 +127,28 @@ namespace BreadCrumbs {
                 setting.Name = "Pause";
                 setting.Description = "Pause this trail, temporarily stopping it from recording";
             }
-            
         }
-        
-        
-
-        public void Stop(OnixModule mod, OnixSetting setting, bool value) {
-            Live = false;
-            Paused = false;
-            PauseSetting.IsHidden = true;
-            StopSetting.IsHidden = true;
-            
+        private void Pause(OnixModule mod, OnixSetting setting, bool value) {
+            RealPause(setting);
         }
 
-        public void Remove(OnixModule mod, OnixSetting setting, bool value) {
+
+        public void RealStop() {
+            Live = false;
+            DoLine.Value = false;  // does not work
+            PauseSetting.IsHidden = true;
+            StopSetting.IsHidden = true;
+        }
+        
+        private void Stop(OnixModule mod, OnixSetting setting, bool value) {
+            RealStop();
+        }
+
+        private void Remove(OnixModule mod, OnixSetting setting, bool value) {
             StopSetting.IsHidden = true;
             PauseSetting.IsHidden = true;
             Live = false;
-            Render = false;
+            DoLine.Value = false;
             Points = new();
             DoLine.IsHidden = true;
             RemoveTrailSetting.IsHidden = true;
@@ -145,6 +159,9 @@ namespace BreadCrumbs {
         public void Add() {
             if (!Paused && Live) {
                 Points.Add(Onix.LocalPlayer.Position);
+                if (BreadCrumbs.Config.ShortenPoints && Points.Count > BreadCrumbs.Config.MaxLength) {
+                    Points.RemoveAt(0);
+                }
             }
         }
 
